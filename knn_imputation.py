@@ -16,7 +16,7 @@ def knn_imputation(df, col):
     pipe_knn = make_pipeline(StandardScaler(), PCA(random_state=42), KNeighborsRegressor())
 
 
-    params_grid = [{'pca__n_components' : np.arange(1, 10 + 1),
+    params_grid = [{'pca__n_components' : np.arange(1, X.shape[1] + 1),
                     'kneighborsregressor__n_neighbors' : np.arange(1,21)}]
 
 
